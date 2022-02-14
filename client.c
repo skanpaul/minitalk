@@ -37,4 +37,3 @@ int	main(int argc, char **argv)
 	stream_out_string(argv[2], g_d.pid_server, &g_d);
 	return (0);
 }
-
