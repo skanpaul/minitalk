@@ -90,6 +90,9 @@ clean: sub_clean
 fclean: clean sub_fclean
 	$(RM) $(NAME_C)
 	$(RM) $(NAME_S)
+	$(RM) $(LIBFTNAME)
+	$(RM) $(LIBFTHD)
+
 
 re: fclean all sub_re
 
