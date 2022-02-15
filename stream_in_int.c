@@ -9,7 +9,7 @@
 /*   Updated: 2022/02/14 07:44:13 by ski              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "server_bonus.h"
+#include "server.h"
 
 /* ************************************************************************** */
 void	stream_in_int(unsigned int start, unsigned int *val, t_data *d)
