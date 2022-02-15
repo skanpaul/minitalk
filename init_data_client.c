@@ -9,7 +9,7 @@
 /*   Updated: 2022/02/11 18:14:44 by ski              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "client.h"
+#include "client_bonus.h"
 
 /* ************************************************************************** */
 // static void reset_str_int(char *str_int);
@@ -17,6 +17,9 @@
 /* ************************************************************************** */
 void	init_data_client(t_data *data)
 {
+	data->sa.sa_handler = &handler_sig_usr;
+	sigaddset(&data->sa.sa_mask, SIGUSR1);
+	sigaddset(&data->sa.sa_mask, SIGUSR2);
 	data->pid_client = getpid();
 	data->us = 50;
 	return ;
