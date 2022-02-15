@@ -37,13 +37,21 @@ typedef struct s_data
 	unsigned int		byte_cnt;
 	unsigned int		byte;
 	unsigned int		mask;
+	unsigned int		response_time_s;
+	unsigned int		response_time_us;
 	char				*str;
 	int					i;
 
 }	t_data;
 /* ************************************************************************** */
 void	handler_sig_usr(int sig_c);
+
 void	init_data_server(t_data *d);
+void	init_basic(t_data *d);
+void	init_sigaction_structure(t_data *d);
+void	init_response_time(char *str_time, t_data *d);
+void	init_byte_counting(t_data *d);
+
 void	stream_in_int(unsigned int start, unsigned int *val, t_data *d);
 int		stream_in_str(unsigned int start, char *str, t_data *d);
 /* ************************************************************************** */
