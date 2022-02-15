@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	int	pid_server;
 
 	init_data_server(&g_d);
-	if(argc == 2)
+	if (argc == 2)
 		init_response_time(argv[1], &g_d);
 	pid_server = getpid();
 	ft_printf("PID server: %d \n", pid_server);

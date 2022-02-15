@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 	stream_out_int(g_d.pid_client, &g_d);
 	stream_out_int(g_d.size_stream, &g_d);
 	stream_out_string(argv[2], g_d.pid_server, &g_d);
-	ft_printf("Attentre réponse du Server [%d]\n", g_d.pid_server);
 	while (1)
 		pause();
 	return (0);
@@ -47,7 +46,6 @@ void	handler_sig_usr(int sig_c)
 {
 	if (sig_c == SIGUSR1)
 	{
-		ft_printf("Message reçu du SERVER [%d]\n", g_d.pid_server);
 		exit(1);
 	}
 	return ;

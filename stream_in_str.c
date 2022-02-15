@@ -28,7 +28,6 @@ int	stream_in_str(unsigned int start, char *str, t_data *d)
 			free (d->str);
 			usleep(d->response_time_us);
 			kill(d->pid_client, SIGUSR1);
-			// init_data_server(d);
 			init_basic(d);
 			init_byte_counting(d);
 			return (1);
@@ -36,6 +35,5 @@ int	stream_in_str(unsigned int start, char *str, t_data *d)
 	}
 	return (0);
 }
-
 
 /* ************************************************************************** */
