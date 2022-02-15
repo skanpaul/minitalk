@@ -36,25 +36,27 @@ OBJ_S		= $(SRC_S:.c=.o)
 # **************************************************************************
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HD)
-	$(CC) $(CFLAG) -L$(LIBFTPATH) -l$(LIBFTLIB) $(OBJ) -o $(NAME)
-$(NAME): $(OBJ) $(HD)
-	$(CC) $(CFLAG) -L$(LIBFTPATH) -l$(LIBFTLIB) $(OBJ) -o $(NAME)
-$(NAME): $(OBJ) $(HD)
-	$(CC) $(CFLAG) -L$(LIBFTPATH) -l$(LIBFTLIB) $(OBJ) -o $(NAME)
+$(NAME):  $(NAME_C) $(NAME_S)
 
-clean: sub_clean
+$(NAME_C): $(OBJ_C) $(HD_C)
+	$(CC) $(CFLAG) -L$(LIBFTPATH) -l$(LIBFTLIB) $(OBJ_C) -o $(NAME_C)
+
+$(NAME_S): $(OBJ_S) $(HD_S)
+	$(CC) $(CFLAG) -L$(LIBFTPATH) -l$(LIBFTLIB) $(OBJ_S) -o $(NAME_S)
+
+# **************************************************************************
+clean:
 	$(RM) $(OBJ_C)
 	$(RM) $(OBJ_S)
 	
-fclean: clean sub_fclean
+fclean: clean
 	$(RM) $(NAME_C)
 	$(RM) $(NAME_S)
 
-re: fclean all sub_re
+re: fclean all
 
 # **************************************************************************
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 # **************************************************************************
 
